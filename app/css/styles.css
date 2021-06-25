@@ -1,116 +1,164 @@
-body {
-    margin: 0;
-    width: 100%;
-    
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap");
+
+.container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  font-family: Ubuntu, Geneva, Tahoma, sans-serif;
+  overflow: hidden;
+}
+
+@media only screen and (min-width: 600px) {
+  .container {
+    width: 50%;
+    left: 25%;
+  }
 }
 
 .hidden {
-    display: none;
+  display: none;
 }
 
 header {
-    text-align: center;
+  text-align: center;
 }
 
 header h1 {
-    font-size: 2.5em;
+  font-size: 2.5em;
 }
 
 header .subtitle {
-    display: block;
-    margin-top: -25px;
-    margin-bottom: 25px;
+  display: block;
+  margin-top: -25px;
+  margin-bottom: 25px;
 }
 
-
 @keyframes shiffer {
-    0%      {top: -7.5px; left: -7.5px;}
-    33%     {top: -7.5px; left: 7.5px;}
-    66%     {top: 7.5px; left: 0;}
-    100%    {top: -7.5px; left: -7.5px;}
+  0% {
+    top: -7.5px;
+    left: -7.5px;
+  }
+  33% {
+    top: -7.5px;
+    left: 7.5px;
+  }
+  66% {
+    top: 7.5px;
+    left: 0;
+  }
+  100% {
+    top: -7.5px;
+    left: -7.5px;
+  }
 }
 
 .cappie {
-    position: relative;
-    animation: shiffer 5s infinite;
-    width: 80%;
-    margin-left: calc(10% - 7.5px);
+  position: relative;
+  animation: shiffer 5s infinite;
+  width: 80%;
+  margin-left: calc(10% - 7.5px);
 }
 
 .cappie .cappie__main {
-    width: 100%;
-    padding-top: 105%;
-    background-image: url('../img/CappieMain.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center center;
+  width: 100%;
+  padding-top: 105%;
+  background-image: url("../img/CappieMain.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+@media only screen and (min-width: 600px) {
+  .cappie {
+    width: 50%;
+    margin: 0 auto;
+  }
 }
 
 @keyframes bulb {
-    0%      {top: 5px; left: -5px;}
-    50%     {top: -5px; left: 5px;}
-    100%    {top: 5px; left: -5px;}
+  0% {
+    top: 5px;
+    left: -5px;
+  }
+  50% {
+    top: -5px;
+    left: 5px;
+  }
+  100% {
+    top: 5px;
+    left: -5px;
+  }
 }
 
 .cappie .cappie__textbulb {
-    background-image: url('../img/CappieTextbulb.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center center;
+  background-image: url("../img/CappieTextbulb.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
 
-    position: absolute;
-    width: 75%;
-    padding-top: 90%;
-    margin-top: 60%;
-    margin-left: 30%;
+  position: absolute;
+  width: 75%;
+  padding-top: 90%;
+  margin-top: 60%;
+  margin-left: 30%;
 
-    animation: bulb 4s infinite;
+  animation: bulb 4s infinite;
 }
 
 .cappie__textbulb .textbulb__text {
-    text-align: center;
-    width: 80%;
-    margin: -70% auto 0;
-    display: block;
+  text-align: center;
+  width: 80%;
+  margin: -70% auto 0;
+  display: block;
 
-    font-size: 1.2rem;
+  font-size: 1.2rem;
 }
 
 @keyframes brows {
-    0%      {top: 110px}
-    50%     {top: 95px;}
-    100%    {top: 110px;}
+  0% {
+    top: 110px;
+  }
+  50% {
+    top: 95px;
+  }
+  100% {
+    top: 110px;
+  }
 }
 
 .cappie .cappie__eyebrows {
-    background-image: url('../img/CappieEyebrow.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center center;
+  background-image: url("../img/CappieEyebrow.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
 
-    position: absolute;
-    width: 65%;
-    padding-top: 22.5%;
-    left: 20%;
-    margin-top: -10%;
+  position: absolute;
+  width: 65%;
+  padding-top: 22.5%;
+  left: 20%;
+  margin-top: -10%;
 
-    animation: brows 4s infinite;
+  animation: brows 4s infinite;
 }
 
 .cappie .cappie__eyebrows.cappie__eyebrows--fast {
-    animation: brows .5s infinite;
+  animation: brows 0.5s infinite;
 }
 
-
 .controls {
-    margin-top: 150px;
-    display: flex;
+  margin-top: 150px;
+  display: flex;
 }
 
 .controls button {
-    margin: 7.5px;
-    width: 100%;
-    height: 75px;
-    font-size: 20px;
+  margin: 7.5px;
+  width: 100%;
+  height: 75px;
+  font-size: 20px;
+  background-color: #0070ad;
+  color: #ffffff;
+  border-width: 0px;
 }
