@@ -5,6 +5,10 @@ body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+.hidden {
+    display: none;
+}
+
 header {
     text-align: center;
 }
@@ -96,4 +100,16 @@ header .subtitle {
 
 .cappie .cappie__eyebrows.cappie__eyebrows--fast {
     animation: brows .5s infinite;
+}
+
+
+.controls {
+    margin-top: 150px;
+    display: flex;
+}
+
+.controls button {
+    margin: 7.5px;
+    width: 100%;
+    height: 75px;
 }
