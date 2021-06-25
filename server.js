@@ -24,9 +24,9 @@ io.on('connection', (socket) => {
     users.push(socket.username);
   })
 
-  socket.on('pantsOn', (bool) => {
-    console.log('clicked ' + bool);
-    io.broadcast.emit('pantsOn', bool);
+  socket.on('answer', (question, bool) => {
+    console.log(socket.username + ' said ' + bool + ' on ' + question);
+    socket.broadcast.emit('pantsOn', bool);
   });
 });
 

@@ -4,31 +4,6 @@ if ('serviceWorker' in navigator) {
   });
 }
 
-
-var socket = io();
-  
-var controls = document.getElementById('controls');
-var textbulb = document.getElementById('textbulb');
-var username = '';
-controlYes.addEventListener('click', function(e) {
-  e.preventDefault();
-  socket.emit('pantsOn', true);
-});
-
-controlNo.addEventListener('click', function(e) {
-  e.preventDefault();
-  socket.emit('pantsOn', false);
-});
-
-socket.on('pantsOn', function(bool) {
-  if (bool) { 
-    alert('Bob has his pants on');
-  } else if (!bool) {
-    alert('BOB IS SHOWING');
-  }
-});
-
-
 const questionEl = document.getElementById('textbulb__text');
 const usernameForm = document.getElementById('usernameForm');
 const cappieEl = document.getElementById('cappie');
@@ -61,3 +36,28 @@ function submitForm() {
   cappieEl.classList.remove('hidden');
   controlsEl.classList.remove('hidden');
 }
+
+var socket = io();
+  
+var controls = document.getElementById('controls');
+var textbulb = document.getElementById('textbulb');
+var username = '';
+
+controlYes.addEventListener('click', function(e) {
+  e.preventDefault();
+  socket.emit('answer', randomQuestion, true);
+});
+
+controlNo.addEventListener('click', function(e) {
+  e.preventDefault();
+  socket.emit('answer', randomQuestion, false);
+});
+
+// UNNECCESARY
+// socket.on('pantsOn', function(bool) {
+//   if (bool) { 
+//     alert('Bob has his pants on');
+//   } else if (!bool) {
+//     alert('BOB IS SHOWING');
+//   }
+// });
