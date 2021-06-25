@@ -15,16 +15,14 @@ questions[1]= "Have you asked Jeffrey how the arve is?";
 questions[2]= "Did you have a coffee break with a colleague?";
 questions[3]= "Is your CV still marked as green?";
 questions[4]= "Have you had a Jumbo date with a colleague?";
-questions[5]= "Have you send a LinkedIn mail to at least one high school classmates";
+questions[5]= "Have you send a LinkedIn mail to at least one high school classmates?";
 questions[6]= "Have you obtained your Scrum certificate yet?";
 questions[7]= "Have you done all your mandatory meetings?";
-
-let randomQuestion = questions[Math.floor(Math.random() * questions.length)];
-console.log(randomQuestion);
+getRandomQuestion();
 
 function getRandomQuestion() {
-  const randomQuestion = questions[Math.floor(Math.random() * questions.length)];
-  questionEl.innerHTML = questions[0];
+  let randomQuestion = questions[Math.floor(Math.random() * questions.length)];
+  questionEl.innerHTML = randomQuestion;
 }
 
 function submitForm() {
@@ -46,18 +44,11 @@ var username = '';
 controlYes.addEventListener('click', function(e) {
   e.preventDefault();
   socket.emit('answer', randomQuestion, true);
+  getRandomQuestion();
 });
 
 controlNo.addEventListener('click', function(e) {
   e.preventDefault();
   socket.emit('answer', randomQuestion, false);
+  getRandomQuestion();
 });
-
-// UNNECCESARY
-// socket.on('pantsOn', function(bool) {
-//   if (bool) { 
-//     alert('Bob has his pants on');
-//   } else if (!bool) {
-//     alert('BOB IS SHOWING');
-//   }
-// });
