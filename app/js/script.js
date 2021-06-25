@@ -4,6 +4,8 @@ if ('serviceWorker' in navigator) {
   });
 }
 
+
+
 const questionEl = document.getElementById('textbulb__text');
 const usernameForm = document.getElementById('usernameForm');
 const cappieEl = document.getElementById('cappie');
@@ -18,10 +20,12 @@ questions[4]= "Have you had a Jumbo date with a colleague?";
 questions[5]= "Have you send a LinkedIn mail to at least one high school classmates?";
 questions[6]= "Have you obtained your Scrum certificate yet?";
 questions[7]= "Have you done all your mandatory meetings?";
+
+let randomQuestion = '';
 getRandomQuestion();
 
 function getRandomQuestion() {
-  let randomQuestion = questions[Math.floor(Math.random() * questions.length)];
+  randomQuestion = questions[Math.floor(Math.random() * questions.length)];
   questionEl.innerHTML = randomQuestion;
 }
 
