@@ -1,7 +1,24 @@
 body {
     margin: 0;
     width: 100%;
+    
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+
+header {
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5em;
+}
+
+header .subtitle {
+    display: block;
+    margin-top: -25px;
+    margin-bottom: 25px;
+}
+
 
 @keyframes shiffer {
     0%      {top: -7.5px; left: -7.5px;}
@@ -14,7 +31,46 @@ body {
     position: relative;
     animation: shiffer 5s infinite;
     width: 80%;
-    margin-left: calc(10% + 7.5px);
+    margin-left: calc(10% - 7.5px);
+}
+
+.cappie .cappie__main {
+    width: 100%;
+    padding-top: 105%;
+    background-image: url('../img/CappieMain.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+@keyframes bulb {
+    0%      {top: 5px; left: -5px;}
+    50%     {top: -5px; left: 5px;}
+    100%    {top: 5px; left: -5px;}
+}
+
+.cappie .cappie__textbulb {
+    background-image: url('../img/CappieTextbulb.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+
+    position: absolute;
+    width: 75%;
+    padding-top: 90%;
+    margin-top: 60%;
+    margin-left: 30%;
+
+    animation: bulb 4s infinite;
+}
+
+.cappie__textbulb .textbulb__text {
+    text-align: center;
+    width: 80%;
+    margin: -70% auto 0;
+    display: block;
+
+    font-size: 1.2rem;
 }
 
 @keyframes brows {
@@ -40,13 +96,4 @@ body {
 
 .cappie .cappie__eyebrows.cappie__eyebrows--fast {
     animation: brows .5s infinite;
-}
-
-.cappie .cappie__main {
-    width: 100%;
-    padding-top: 105%;
-    background-image: url('../img/CappieMain.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center center;
 }
