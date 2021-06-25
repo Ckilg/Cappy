@@ -18,16 +18,42 @@
     <span class="subtitle">Office assistant</span>
   </header>
   <section class="cappie">
-    <div class="cappie__textbulb">
+    <div id="textbulb" class="cappie__textbulb">
       <div class="textbulb__text">Is Bob Muller wearing any pants today?</div>
     </div>
     <div class="cappie__eyebrows"></div>
     <div class="cappie__main"></div>
   </section>
-  <section class="controls">
-    <button>Yes</button>
-    <button>No</button>
+  <section id="controlsContainer" class="controls">
+    <button id="controlYes">Yes</button>
+    <button id="controlNo">No</button>
   </section>
+
   <script src="js/script.js"></script>
+  <script src="/socket.io/socket.io.js"></script>
+    <script>
+      var socket = io();
+    
+      var controls = document.getElementById('controls');
+      var textbulb = document.getElementById('textbulb');
+    
+      controlYes.addEventListener('click', function(e) {
+        e.preventDefault();
+        socket.emit('pantsOn', true);
+      });
+    
+      controlNo.addEventListener('click', function(e) {
+        e.preventDefault();
+        socket.emit('pantsOn', false);
+      });
+
+      socket.on('pantsOn', function(bool) {
+        if (bool) { 
+          alert('Bob has his pants on');
+        } else if (!bool) {
+          alert('BOB IS SHOWING');
+        }
+      });
+    </script>
 </body>
 </html>
