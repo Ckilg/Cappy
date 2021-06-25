@@ -1,0 +1,38 @@
+@keyframes shiffer {
+    0%      {top: -10px; left: -10px;}
+    33%     {top: -10px; left: 10px;}
+    66%     {top: 10px; left: 0px;}
+    100%    {top: -10px; left: -10px;}
+}
+
+.cappie {
+    position: relative;
+    animation: shiffer 5s infinite;
+}
+
+@keyframes brows {
+    0%      {top: 110px}
+    50%     {top: 85px;}
+    100%    {top: 110px;}
+}
+
+.cappie .cappie__eyebrows {
+    height: 78px;
+    width: 289px;
+    background-image: url('../img/CappieEyebrow.png');
+    position: absolute;
+    top: 110px;
+    left: 120px;
+
+    animation: brows 4s infinite;
+}
+
+.cappie .cappie__eyebrows.cappie__eyebrows--fast {
+    animation: brows .5s infinite;
+}
+
+.cappie .cappie__main {
+    height: 466px;
+    width: 488px;
+    background-image: url('../img/CappieMain.png');
+}
