@@ -19,44 +19,31 @@
     <h1>Cappie</h1>
     <span class="subtitle">Office assistant</span>
   </header>
-  <section class="cappie">
+
+  <section class="username" id="usernameForm">
+    <form onsubmit="return false">
+      <label for="username">Naam:</label>
+      <input type="text" name="username" id="username">
+    </form>
+
+    <button type="button" class="submit-button" onclick="submitForm()">Verstuur</button>
+  </section>
+
+  <section id="cappie" class="cappie hidden">
     <div id="textbulb" class="cappie__textbulb">
-      <div class="textbulb__text">Is Bob Muller wearing any pants today?</div>
+      <div id="textbulb__text" class="textbulb__text">Is Bob Muller wearing any pants today?</div>
     </div>
     <div class="cappie__eyebrows"></div>
     <div class="cappie__main"></div>
   </section>
-  <section id="controlsContainer" class="controls">
+
+  <section id="controlsContainer" class="controls hidden">
     <button id="controlYes">Yes</button>
     <button id="controlNo">No</button>
   </section>
 
-  <script src="js/script.js"></script>
   <script src="https://cdn.socket.io/3.1.3/socket.io.min.js" integrity="sha384-cPwlPLvBTa3sKAgddT6krw0cJat7egBga3DJepJyrLl4Q9/5WLra3rrnMcyTyOnh" crossorigin="anonymous"></script>
-  <script>
-    var socket = io();
-  
-    var controls = document.getElementById('controls');
-    var textbulb = document.getElementById('textbulb');
-  
-    controlYes.addEventListener('click', function(e) {
-      e.preventDefault();
-      socket.emit('pantsOn', true);
-    });
-  
-    controlNo.addEventListener('click', function(e) {
-      e.preventDefault();
-      socket.emit('pantsOn', false);
-    });
-
-    socket.on('pantsOn', function(bool) {
-      if (bool) { 
-        alert('Bob has his pants on');
-      } else if (!bool) {
-        alert('BOB IS SHOWING');
-      }
-    });
-  </script>
+  <script src="js/script.js"></script>
   </div>
 </body>
 </html>
