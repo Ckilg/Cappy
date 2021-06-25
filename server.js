@@ -15,12 +15,10 @@ io.on('connection', (socket) => {
   socket.on('disconnect', () => {
     console.log('user disconnected');
   });
-});
 
-io.on('connection', (socket) => {
   socket.on('pantsOn', (bool) => {
     console.log('clicked ' + bool);
-    io.emit('pantsOn', bool);
+    io.broadcast.emit('pantsOn', bool);
   });
 });
 
